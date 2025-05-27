@@ -66,7 +66,7 @@ function App() {
   defaultStickyColumns={["id", "name"]}
   maxHeight="600px"
   onColumnToggle={(columnKey, isSticky) => {
-    console.log(\`Column \${columnKey} is now \${isSticky ? 'sticky' : 'not sticky'}\`)
+    console.log(`Column \${columnKey} is now \${isSticky ? 'sticky' : 'not sticky'}`)
   }}
 />
 ```
@@ -75,12 +75,12 @@ function App() {
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| \`data\` | \`Array<Record<string, any>>\` | Required | Array of data objects to display |
-| \`columns\` | \`ColumnDefinition[]\` | Required | Column configuration array |
-| \`defaultStickyColumns\` | \`string[]\` | \`["id"]\` | Initially sticky columns |
-| \`maxHeight\` | \`string\` | \`"auto"\` | Maximum height of table container |
-| \`onColumnToggle\` | \`(key: string, isSticky: boolean) => void\` | \`undefined\` | Callback when column stickiness changes |
-| \`className\` | \`string\` | \`""\` | Additional CSS classes |
+| `data` | `Array<Record<string, any>>` | Required | Array of data objects to display |
+| `columns` | `ColumnDefinition[]` | Required | Column configuration array |
+| `defaultStickyColumns` | `string[]` | `["id"]` | Initially sticky columns |
+| `maxHeight` | `string` | `"auto"` | Maximum height of table container |
+| `onColumnToggle` | `(key: string, isSticky: boolean) => void` | `undefined` | Callback when column stickiness changes |
+| `className` | `string` | `""` | Additional CSS classes |
 
 ## Column Definition
 
@@ -100,9 +100,9 @@ interface ColumnDefinition {
 
 The component uses Tailwind CSS classes. You can customize the appearance by:
 
-1. **Override CSS classes**: Pass custom \`className\` prop
+1. **Override CSS classes**: Pass custom `className` prop
 2. **Modify theme**: Update your Tailwind config
-3. **Custom sticky styles**: Modify the \`getStickyStyle\` function
+3. **Custom sticky styles**: Modify the `getStickyStyle` function
 
 ```tsx
 // Custom styling example
@@ -238,16 +238,16 @@ const inventoryColumns = [
 **1. Horizontal scroll not appearing**
 - Ensure container has fixed width or max-width
 - Check that total column width exceeds container width
-- Verify \`overflow-x: auto\` is applied
+- Verify `overflow-x: auto` is applied
 
 **2. Sticky columns not working**
-- Check browser support for \`position: sticky\`
-- Ensure parent container doesn't have \`overflow: hidden\`
+- Check browser support for `position: sticky`
+- Ensure parent container doesn't have `overflow: hidden`
 - Verify z-index values are correct
 
 **3. Performance issues**
 - Implement virtual scrolling for large datasets
-- Use \`React.memo\` for row components
+- Use `React.memo` for row components
 - Consider pagination for 500+ rows
 
 ### Debug Mode
@@ -299,10 +299,10 @@ Enable debug mode to see column calculations:
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch: \`git checkout -b feature/new-feature\`
+2. Create a feature branch: `git checkout -b feature/new-feature`
 3. Make your changes and add tests
-4. Commit your changes: \`git commit -am 'Add new feature'\`
-5. Push to the branch: \`git push origin feature/new-feature\`
+4. Commit your changes: `git commit -am 'Add new feature'`
+5. Push to the branch: `git push origin feature/new-feature`
 6. Submit a pull request
 
 ### Development Setup
