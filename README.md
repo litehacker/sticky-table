@@ -15,23 +15,23 @@ A React component that provides a horizontally scrollable table with dynamic sti
 
 This component uses shadcn/ui components. Make sure you have the following dependencies installed:
 
-\`\`\`bash
+```bash
 npm install @radix-ui/react-checkbox
 npm install lucide-react
-\`\`\`
+```
 
 And ensure you have these shadcn/ui components:
 
-\`\`\`bash
+```bash
 npx shadcn@latest add checkbox
 npx shadcn@latest add card
-\`\`\`
+```
 
 ## Usage
 
 ### Basic Implementation
 
-\`\`\`tsx
+```tsx
 import StickyTable from './components/sticky-table'
 
 const data = [
@@ -55,11 +55,11 @@ const columns = [
 function App() {
   return <StickyTable data={data} columns={columns} />
 }
-\`\`\`
+```
 
 ### Advanced Usage with Custom Props
 
-\`\`\`tsx
+```tsx
 <StickyTable 
   data={employeeData}
   columns={columnDefinitions}
@@ -69,7 +69,7 @@ function App() {
     console.log(\`Column \${columnKey} is now \${isSticky ? 'sticky' : 'not sticky'}\`)
   }}
 />
-\`\`\`
+```
 
 ## Props
 
@@ -84,7 +84,7 @@ function App() {
 
 ## Column Definition
 
-\`\`\`tsx
+```tsx
 interface ColumnDefinition {
   key: string        // Unique identifier for the column
   label: string      // Display name for the column header
@@ -92,7 +92,7 @@ interface ColumnDefinition {
   sortable?: boolean // Whether column is sortable (future feature)
   type?: 'text' | 'number' | 'date' | 'currency' // Data type (future feature)
 }
-\`\`\`
+```
 
 ## Customization
 
@@ -104,28 +104,28 @@ The component uses Tailwind CSS classes. You can customize the appearance by:
 2. **Modify theme**: Update your Tailwind config
 3. **Custom sticky styles**: Modify the \`getStickyStyle\` function
 
-\`\`\`tsx
+```tsx
 // Custom styling example
 <StickyTable 
   className="custom-table-theme"
   data={data}
   columns={columns}
 />
-\`\`\`
+```
 
-\`\`\`css
+```css
 /* Custom CSS */
 .custom-table-theme .sticky-column {
   background-color: #f8fafc;
   border-right: 3px solid #3b82f6;
 }
-\`\`\`
+```
 
 ### Data Formatting
 
 Format your data before passing to the component:
 
-\`\`\`tsx
+```tsx
 const formattedData = rawData.map(item => ({
   ...item,
   salary: new Intl.NumberFormat('en-US', {
@@ -134,7 +134,7 @@ const formattedData = rawData.map(item => ({
   }).format(item.salary),
   startDate: new Date(item.startDate).toLocaleDateString()
 }))
-\`\`\`
+```
 
 ## Performance Considerations
 
@@ -146,7 +146,7 @@ For tables with 1000+ rows, consider:
 2. **Pagination**: Break data into smaller chunks
 3. **Lazy Loading**: Load data as needed
 
-\`\`\`tsx
+```tsx
 // Example with pagination
 const [currentPage, setCurrentPage] = useState(1)
 const itemsPerPage = 100
@@ -156,17 +156,17 @@ const paginatedData = data.slice(
 )
 
 <StickyTable data={paginatedData} columns={columns} />
-\`\`\`
+```
 
 ### Memory Optimization
 
-\`\`\`tsx
+```tsx
 // Memoize expensive calculations
 const memoizedColumns = useMemo(() => 
   columns.map(col => ({ ...col, width: calculateOptimalWidth(col) })),
   [data]
 )
-\`\`\`
+```
 
 ## Browser Support
 
@@ -188,18 +188,18 @@ The component follows WCAG 2.1 guidelines:
 
 ### ARIA Labels
 
-\`\`\`tsx
+```tsx
 // The component automatically adds appropriate ARIA labels
 <th aria-sort="none" role="columnheader">
   Column Name
 </th>
 <td role="gridcell">Cell Content</td>
-\`\`\`
+```
 
 ## Common Use Cases
 
 ### 1. Employee Management Dashboard
-\`\`\`tsx
+```tsx
 const employeeColumns = [
   { key: "id", label: "Employee ID", width: "120px" },
   { key: "name", label: "Full Name", width: "200px" },
@@ -207,10 +207,10 @@ const employeeColumns = [
   { key: "salary", label: "Salary", width: "120px" },
   // ... more columns
 ]
-\`\`\`
+```
 
 ### 2. Financial Data Table
-\`\`\`tsx
+```tsx
 const financialColumns = [
   { key: "date", label: "Date", width: "120px" },
   { key: "account", label: "Account", width: "200px" },
@@ -218,10 +218,10 @@ const financialColumns = [
   { key: "credit", label: "Credit", width: "120px" },
   // ... more columns
 ]
-\`\`\`
+```
 
 ### 3. Product Inventory
-\`\`\`tsx
+```tsx
 const inventoryColumns = [
   { key: "sku", label: "SKU", width: "120px" },
   { key: "name", label: "Product Name", width: "250px" },
@@ -229,7 +229,7 @@ const inventoryColumns = [
   { key: "stock", label: "Stock Level", width: "120px" },
   // ... more columns
 ]
-\`\`\`
+```
 
 ## Troubleshooting
 
@@ -254,13 +254,13 @@ const inventoryColumns = [
 
 Enable debug mode to see column calculations:
 
-\`\`\`tsx
+```tsx
 <StickyTable 
   data={data}
   columns={columns}
   debug={true} // Shows column width calculations
 />
-\`\`\`
+```
 
 ## Future Enhancements
 
@@ -277,7 +277,7 @@ Enable debug mode to see column calculations:
 
 ### API Extensions
 
-\`\`\`tsx
+```tsx
 // Future API design
 <StickyTable 
   data={data}
@@ -294,7 +294,7 @@ Enable debug mode to see column calculations:
   onSelect={(selectedRows) => {}}
   onExport={(format, data) => {}}
 />
-\`\`\`
+```
 
 ## Contributing
 
@@ -307,7 +307,7 @@ Enable debug mode to see column calculations:
 
 ### Development Setup
 
-\`\`\`bash
+```bash
 # Clone the repository
 git clone <repository-url>
 
@@ -322,7 +322,7 @@ npm test
 
 # Build for production
 npm run build
-\`\`\`
+```
 
 ## License
 
