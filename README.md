@@ -332,9 +332,4 @@ MIT License - see LICENSE file for details.
 
 **Giorgi Gvimradze**
 - LinkedIn: [https://www.linkedin.com/in/litehacker/](https://www.linkedin.com/in/litehacker/)
-## Support
 
-- 📧 Email: support@yourproject.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourproject/issues)
-- 📖 Documentation: [Full Documentation](https://docs.yourproject.com)
-- 💬 Discord: [Community Chat](https://discord.gg/yourproject)
