@@ -1,5 +1,6 @@
 # Sticky Table Component
 
+[DEMO here.](https://sticky-table-kappa.vercel.app/)  
 A React component that provides a horizontally scrollable table with dynamic sticky column functionality. Users can select which columns to keep visible while scrolling horizontally through large datasets.
 
 ## Features
