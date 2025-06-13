@@ -1,5 +1,5 @@
-import Component from "../sticky-table"
+import DemoPage from "../demo-page"
 
-export default function Page() {
-  return <Component />
+export default function Home() {
+  return <DemoPage />
 }
